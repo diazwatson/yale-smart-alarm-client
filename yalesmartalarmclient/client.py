@@ -13,6 +13,7 @@ _LOGGER = logging.getLogger(__name__)
 YALE_STATE_ARM_FULL = "arm"
 YALE_STATE_ARM_PARTIAL = "home"
 YALE_STATE_DISARM = "disarm"
+YALE_STATE_TRIGGERED = "triggered"
 
 YALE_LOCK_STATE_LOCKED = "locked"
 YALE_LOCK_STATE_UNLOCKED = "unlocked"
@@ -32,9 +33,9 @@ class AuthenticationError(Exception):
 class YaleSmartAlarmClient:
     YALE_CODE_RESULT_SUCCESS = '000'
 
-    _ENDPOINT_GET_MODE = "/yapi/api/panel/mode/"
-    _ENDPOINT_SET_MODE = "/yapi/api/panel/mode/"
-    _ENDPOINT_DEVICES_STATUS = "/yapi/api/panel/device_status/"
+    _ENDPOINT_GET_MODE = "/api/panel/mode/"
+    _ENDPOINT_SET_MODE = "/api/panel/mode/"
+    _ENDPOINT_DEVICES_STATUS = "/api/panel/device_status/"
     _ENDPOINT_PANIC_BUTTON = "/api/panel/panic"
 
     _REQUEST_PARAM_AREA = "area"
